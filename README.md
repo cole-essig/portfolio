@@ -14,7 +14,7 @@ My Portfolio is a web-based site showcasing my full-stack development projects, 
 
 - **Frontend**: React.js (with Vite)
 - **Language**: TypeScript
-- **Styling**: TailwindCSS
+- **Styling**: TailwindCSS and [shadcn/ui](https://ui.shadcn.com/) -> check out their library.
 - **Routing**: React Router DOM
 
 ## Getting Started
