@@ -16,7 +16,6 @@ My Portfolio is a web-based site showcasing my full-stack development projects, 
 - **Language**: TypeScript
 - **Styling**: TailwindCSS
 - **Routing**: React Router DOM
-- **Icons**: Lucide React
 
 ## Getting Started
 
@@ -44,12 +43,6 @@ Run the development server:
 
 ```bash
 npm run dev
-```
-
-Build for production:
-
-```bash
-npm run build
 ```
 
 ## Contact
