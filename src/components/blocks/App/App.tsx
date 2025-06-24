@@ -1,9 +1,11 @@
 import "./App.css"
+import { useState, useEffect, useRef } from "react"
+import Header from "../Header/Header"
  
-function App() {
+const App: React.FC = () => {
   return (
     <div className="App">
-      <h1 className="text-white text-4xl p-10 font-bold">Cole Essig</h1>
+      <Header></Header>
     </div>
   )
 }
