@@ -1,5 +1,5 @@
-import HeadlineContent from "../HeadlineContent/HeadlineContent";
-import HeadlineAnima from "../HeadlineAnima/HeadlineAnima";
+import HeadlineContent from "./HeadlineContent";
+import HeadlineAnima from "./HeadlineAnima";
 
 const Headline: React.FC = () => {
     return (
