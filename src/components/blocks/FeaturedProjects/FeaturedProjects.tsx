@@ -6,7 +6,7 @@ import ProjectBlock from "./ProjectBlock";
 
 const FeaturedProjects: React.FC = () => {
   const bullet: Bullet = {
-    img: "",
+    img: "src/assets/code.svg",
     alt: "icon",
     title: "Built with cutting edge frameworks and tools"
   }
