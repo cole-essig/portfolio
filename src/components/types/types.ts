@@ -23,3 +23,12 @@ export interface Project {
 };
 
 export type Projects = Project[];
+
+export interface Attribute {
+    title: string,
+    description: string,
+    img: string,
+    alt: string
+};
+
+export type Attributes = Attribute[]; 

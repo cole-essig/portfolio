@@ -4,6 +4,7 @@ import Header from "../Header/Header"
 import Headline from "../Headline/Headline"
 import StatsBlock from "../StatsBlock/StatsBlock"
 import FeaturedProjects from "../FeaturedProjects/FeaturedProjects"
+import AttributeBlock from "../AttributeBlock/AttributeBlock"
  
 const App: React.FC = () => {
   const [visitors, setVisitors] = useState(0)
@@ -15,8 +16,9 @@ const App: React.FC = () => {
       </div>
       <div className="p-[80px]">
         <StatsBlock />
-        <div className="flex items-center justify-center">
+        <div className="flex flex-col items-center justify-center">
           <FeaturedProjects />
+          <AttributeBlock />
         </div>
       </div>
     </div>
