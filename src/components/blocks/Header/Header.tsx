@@ -6,7 +6,7 @@ const Header: React.FC = () => {
         console.log("HEY You, Be Fren!!")
     }
     return (
-        < div className="flex justify-between mb-[80px]">
+        < div className="flex justify-between mb-[80px] w-full">
             <h1 className="text-white font-bold text-[32px] hover:scale-105 transition-all duration-200 ease-in-out cursor-pointer">
                 Cole Essig
             </h1>
