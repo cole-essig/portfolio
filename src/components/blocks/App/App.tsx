@@ -5,6 +5,7 @@ import Headline from "../Headline/Headline"
 import StatsBlock from "../StatsBlock/StatsBlock"
 import FeaturedProjects from "../FeaturedProjects/FeaturedProjects"
 import AttributeBlock from "../AttributeBlock/AttributeBlock"
+import WorkExp from "../WorkExp/WorkExp"
  
 const App: React.FC = () => {
   const [visitors, setVisitors] = useState(0)
@@ -19,6 +20,7 @@ const App: React.FC = () => {
         <div className="flex flex-col items-center justify-center">
           <FeaturedProjects />
           <AttributeBlock />
+          <WorkExp />
         </div>
       </div>
     </div>

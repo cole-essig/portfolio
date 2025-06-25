@@ -32,3 +32,14 @@ export interface Attribute {
 };
 
 export type Attributes = Attribute[]; 
+
+export interface Job {
+    company: string,
+    position: string,
+    date: string,
+    acchievements: string[],
+    techstack: string[],
+    active: boolean
+};
+
+export type Jobs = Job[]; 
