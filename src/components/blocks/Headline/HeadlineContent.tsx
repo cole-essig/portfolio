@@ -1,18 +1,24 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import RotatingWords from "./RotatingWords";
+import SectionHeader from "../SectionHeader/SectionHeader";
+import type { Bullet } from "@/components/types/types";
 
 const HeadlineContent: React.FC = () => {
     const ViewWork = (e: React.MouseEvent<HTMLButtonElement>) => {
       e.preventDefault();
       console.log("Looky Looky Senator!")
     }
+
+    const bullet: Bullet = {
+        img: "src\assets\code.svg",
+        alt: "icon",
+        title: "Full-Stack Developer", 
+    }
+
     return (
         <div className="flex flex-col max-w-[50vw] mt-[150px]">
-            <div className="flex rounded-full w-max border border-white bg-gray-500 p-2">
-                <img src="src\assets\code.svg" alt="icon" className="w-[30px] h-[30px] mt-[5px] mr-[10px]" />
-                <p className="text-white text-[24px]">Full-Stack Developer</p>
-            </div>
+            <SectionHeader bullet={bullet} />
             <p className="text-white text-[45px] font-extrabold p-0">
                 Logical by Nature, Creative by Practice
             </p>

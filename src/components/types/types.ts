@@ -6,3 +6,9 @@ export interface Stat {
 }
 
 export type Stats = Stat[];
+
+export interface Bullet {
+    img: string,
+    alt: string,
+    title: string,
+}

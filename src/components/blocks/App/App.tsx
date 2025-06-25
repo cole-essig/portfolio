@@ -2,7 +2,7 @@ import "./App.css"
 import { useState, useEffect, useRef } from "react"
 import Header from "../Header/Header"
 import Headline from "../Headline/Headline"
-import StatsBlock from "../Stats/Stats"
+import StatsBlock from "../StatsBlock/StatsBlock"
  
 const App: React.FC = () => {
   const [visitors, setVisitors] = useState(0)
