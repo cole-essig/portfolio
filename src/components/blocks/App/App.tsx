@@ -7,6 +7,7 @@ import AttributeBlock from "../AttributeBlock/AttributeBlock"
 import WorkExp from "../WorkExp/WorkExp"
 import StrengthSkills from "../StrengthSkills/StrengthSkills"
 import ContactSection from "../ContactSection/ContactSection"
+import Footer from "../Footer/Footer"
  
 const App: React.FC = () => {
   return (
@@ -23,6 +24,7 @@ const App: React.FC = () => {
           <WorkExp />
           <StrengthSkills />
           <ContactSection />
+          <Footer />
         </div>
       </div>
     </div>
