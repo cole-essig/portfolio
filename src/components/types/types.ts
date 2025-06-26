@@ -43,3 +43,11 @@ export interface Job {
 };
 
 export type Jobs = Job[]; 
+
+export interface Skill {
+    skill: string,
+    img: string,
+    alt: string
+};
+
+export type Skills = Skill[];

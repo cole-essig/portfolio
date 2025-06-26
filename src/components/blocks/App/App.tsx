@@ -5,6 +5,7 @@ import StatsBlock from "../StatsBlock/StatsBlock"
 import FeaturedProjects from "../FeaturedProjects/FeaturedProjects"
 import AttributeBlock from "../AttributeBlock/AttributeBlock"
 import WorkExp from "../WorkExp/WorkExp"
+import StrengthSkills from "../StrengthSkills/StrengthSkills"
  
 const App: React.FC = () => {
   return (
@@ -19,6 +20,7 @@ const App: React.FC = () => {
           <FeaturedProjects />
           <AttributeBlock />
           <WorkExp />
+          <StrengthSkills />
         </div>
       </div>
     </div>
