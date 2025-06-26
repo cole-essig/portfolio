@@ -12,7 +12,7 @@ const WorkExp: React.FC = () => {
   ];
 
   const bullet: Bullet = {
-    img: "src/assets/code.svg",
+    img: "/assets/code.svg",
     alt: "Career Header",
     title: "Career Overview"
   };  

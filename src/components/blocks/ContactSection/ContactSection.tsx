@@ -4,7 +4,7 @@ import type { Bullet } from "@/components/types/types";
 
 const ContactSection: React.FC = () => {
     const bullet: Bullet = {
-        img: "src/assets/react.svg",
+        img: "/assets/react.svg",
         alt: "phone icon",
         title: "Have a question? Let's talk!",
     };

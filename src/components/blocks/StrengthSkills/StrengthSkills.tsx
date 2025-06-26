@@ -15,7 +15,7 @@ const StrengthSkills: React.FC = () => {
         skilledTeamMember
     ];
     const bullet: Bullet = {
-        img: "src/assets/code.svg",
+        img: "/assets/code.svg",
         alt: "Strengths and Skills icon",
         title: "Key Areas Where I Add Value",
     }

@@ -7,7 +7,7 @@ interface JobBlockProps {
 
 const JobBlock: React.FC<JobBlockProps> = ({ job }) => {
     const bullet: Bullet = {
-        img: "src/assets/code.svg",
+        img: "/assets/code.svg",
         alt: job.date,
         title: job.date
     };
@@ -38,4 +38,4 @@ const JobBlock: React.FC<JobBlockProps> = ({ job }) => {
     )
 }
 
-export default JobBlock;    
+export default JobBlock;
