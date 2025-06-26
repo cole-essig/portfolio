@@ -1,5 +1,4 @@
 import "./App.css"
-import { useState, useEffect, useRef } from "react"
 import Header from "../Header/Header"
 import Headline from "../Headline/Headline"
 import StatsBlock from "../StatsBlock/StatsBlock"
@@ -8,7 +7,6 @@ import AttributeBlock from "../AttributeBlock/AttributeBlock"
 import WorkExp from "../WorkExp/WorkExp"
  
 const App: React.FC = () => {
-  const [visitors, setVisitors] = useState(0)
   return (
     <div className="App">
       <div className="w-screen h-screen p-[80px]">
