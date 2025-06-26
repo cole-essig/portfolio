@@ -1,4 +1,3 @@
-import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import RotatingWords from "./RotatingWords";
 import SectionHeader from "../SectionHeader/SectionHeader";
@@ -22,7 +21,6 @@ const HeadlineContent: React.FC = () => {
             <p className="text-white text-[45px] font-extrabold p-0">
                 Logical by Nature, Creative by Practice
             </p>
-            {/* <span className="rotate">Solutions | Innovation | Impact | Creativity </span> */}
             <p className="text-white text-[45px] font-extrabold p-0">
                 <RotatingWords />
             </p>

@@ -6,6 +6,7 @@ import FeaturedProjects from "../FeaturedProjects/FeaturedProjects"
 import AttributeBlock from "../AttributeBlock/AttributeBlock"
 import WorkExp from "../WorkExp/WorkExp"
 import StrengthSkills from "../StrengthSkills/StrengthSkills"
+import ContactSection from "../ContactSection/ContactSection"
  
 const App: React.FC = () => {
   return (
@@ -21,6 +22,7 @@ const App: React.FC = () => {
           <AttributeBlock />
           <WorkExp />
           <StrengthSkills />
+          <ContactSection />
         </div>
       </div>
     </div>
