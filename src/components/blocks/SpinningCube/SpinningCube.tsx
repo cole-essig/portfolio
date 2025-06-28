@@ -1,0 +1,103 @@
+import React, { useEffect, useRef } from 'react';
+import { gsap } from 'gsap';
+import MiniCube from './MiniCube';
+
+const MINI_CUBES = [
+  { speed: 6, inclination: 30, name: 'Dicks' },
+  { speed: 8, inclination: 120, name: 'Bicks' },
+  { speed: 10, inclination: 180, name: 'Tricks' },
+  { speed: 12, inclination: 220, name: 'Eicks' },
+  { speed: 14, inclination: 60, name: 'Ricks' },
+  { speed: 16, inclination: 150, name: 'Sicks' },
+];
+
+const ORBIT_RADIUS_X = 420;
+const ORBIT_RADIUS_Y = 160;
+const ORBIT_RADIUS_Z = 50;
+
+const degToRad = deg => deg * (Math.PI / 180);
+
+export default function Test() {
+  const cubeRef = useRef(null);
+  const miniRefs = useRef([]);
+
+  useEffect(() => {
+    const cube = cubeRef.current;
+
+    gsap.to(cube, {
+      rotationY: '+=360',
+      rotationX: '+=360',
+      duration: 6,
+      repeat: -1,
+      ease: 'linear',
+    });
+
+    gsap.to(cube, {
+      scale: 1.1,
+      duration: 1,
+      repeat: -1,
+      yoyo: true,
+      ease: 'power1.inOut',
+    });
+
+    MINI_CUBES.forEach((params, i) => {
+      const el = miniRefs.current[i];
+      if (!el) return;
+
+      const angle = { theta: 0 };
+      const inclinationRad = degToRad(params.inclination);
+
+      gsap.to(angle, {
+        theta: Math.PI * 2,
+        duration: params.speed,
+        repeat: -1,
+        ease: 'linear',
+        onUpdate: () => {
+          const t = angle.theta;
+          const x0 = ORBIT_RADIUS_X * Math.cos(t);
+          const y0 = ORBIT_RADIUS_Y * Math.sin(t);
+          const z0 = ORBIT_RADIUS_Z * Math.sin(t);
+
+          const y = y0 * Math.cos(inclinationRad) - z0 * Math.sin(inclinationRad);
+          const z = y0 * Math.sin(inclinationRad) + z0 * Math.cos(inclinationRad);
+          const x = x0;
+
+          const scale = 1 + z / (8 * ORBIT_RADIUS_Z);
+          el.style.transform = `translate3d(${x}px, ${y}px, ${z}px) scale(${scale})`;
+          const opacity = gsap.utils.mapRange(-ORBIT_RADIUS_Z, 0, 0, 1, z);
+          el.style.opacity = gsap.utils.clamp(0, 1, opacity);
+        },
+      });
+    });
+  }, []);
+
+  return (
+    <div className="relative w-[200px] h-[200px] mx-auto my-[400px] perspective-[400px] bg-[#111]">
+      <div
+        ref={cubeRef}
+        className="absolute inset-0 transform-style-preserve-3d origin-center"
+      >
+        <div className="absolute w-full h-full bg-blue-700/70 border border-blue-700/80 shadow-[0_0_10px_rgba(251,250,250,0.7),0_0_20px_rgba(246,245,246,0.4)] backface-visible translate-z-[100px]" />
+        <div className="absolute w-full h-full bg-blue-700/70 border border-blue-700/80 shadow-[0_0_10px_rgba(251,250,250,0.7),0_0_20px_rgba(246,245,246,0.4)] backface-visible rotate-y-180 translate-z-[100px]" />
+        <div className="absolute w-full h-full bg-blue-700/70 border border-blue-700/80 shadow-[0_0_10px_rgba(251,250,250,0.7),0_0_20px_rgba(246,245,246,0.4)] backface-visible rotate-y-90 translate-z-[100px]" />
+        <div className="absolute w-full h-full bg-blue-700/70 border border-blue-700/80 shadow-[0_0_10px_rgba(251,250,250,0.7),0_0_20px_rgba(246,245,246,0.4)] backface-visible -rotate-y-90 translate-z-[100px]" />
+        <div className="absolute w-full h-full bg-blue-700/70 border border-blue-700/80 shadow-[0_0_10px_rgba(251,250,250,0.7),0_0_20px_rgba(246,245,246,0.4)] backface-visible rotate-x-90 translate-z-[100px]" />
+        <div className="absolute w-full h-full bg-blue-700/70 border border-blue-700/80 shadow-[0_0_10px_rgba(251,250,250,0.7),0_0_20px_rgba(246,245,246,0.4)] backface-visible -rotate-x-90 translate-z-[100px]" />
+      </div>
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 translate-z-[50px] text-xl font-bold text-neutral-100 pointer-events-none z-10 drop-shadow-[0_0_20px_rgba(231,241,148,0.9)]">
+        Software Engineer
+      </div>
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transform-style-preserve-3d perspective-[1000px]">
+        {MINI_CUBES.map((cube, index) => (
+          <div
+            key={index}
+            ref={el => (miniRefs.current[index] = el)}
+            className="absolute transform-style-preserve-3d will-change-transform"
+          >
+            <MiniCube name={cube.name} />
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
