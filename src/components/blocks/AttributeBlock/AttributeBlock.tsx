@@ -5,7 +5,7 @@ const AttributeBlock: React.FC = () => {
     const attributes: Attributes = [
         { title: "Responsive Design", img: "/assets/code.svg", alt: "Responsive Design", description: "Ensuring your website looks great on all devices." },
         { title: "SEO Optimized", img: "/assets/code.svg", alt: "SEO Optimized", description: "Improving your website's visibility on search engines." },
-        { title: "Clean/Efficient Code", img: "/assets/code.svg", alt: "Fast Loading", description: "Writing well-structured, optimized code that's easy to read and maintain." },
+        { title: "Clean Code", img: "/assets/code.svg", alt: "Fast Loading", description: "Writing well-structured, optimized code that's easy to read and maintain." },
         { title: "Fast & Quality", img: "/assets/code.svg", alt: "User Friendly", description: "Shipping projects on time without compromising quality or performance." },
     ];
     return (

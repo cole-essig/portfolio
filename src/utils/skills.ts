@@ -2,49 +2,49 @@ import type { Skill, Skills } from "@/components/types/types";
 
 export const fullStackReactDev: Skill = {
     skill: "Full-Stack React Developer",
-    img: "src/assets/fullstack.svg",
+    img: './../assets/code.svg', // Assuming the icon path is correct
     alt: "Full Stack Developer icon",       
 };
 
 export const projectManagement: Skill = {
     skill: "Project Management",        
-    img: "src/assets/project_management.svg",
+    img: './../assets/code.svg',
     alt: "Project Management icon",
 };
 
 export const python: Skill = {
     skill: "Python",
-    img: "src/assets/python.svg",
+    img: './../assets/code.svg',
     alt: "Python icon",
 };
 
 export const webDesign: Skill = {
     skill: "Web Design",
-    img: "src/assets/web_design.svg",
+    img: './../assets/code.svg',
     alt: "Web Design icon",
 };
 
 export const typecript: Skill = {
     skill: "TypeScript",
-    img: "src/assets/typescript.svg",
+    img: './../assets/code.svg',
     alt: "TypeScript icon",
 };
 
 export const adaptiveLearning: Skill = {
     skill: "Adaptive Learning",         
-    img: "src/assets/adaptive_learning.svg",
+    img: './../assets/code.svg',
     alt: "Adaptive Learning icon",
 };
 
 export const java: Skill = {
     skill: "Java",      
-    img: "src/assets/java.svg",
+    img: './../assets/code.svg',
     alt: "Java icon",   
 };
 
 export const skilledTeamMember: Skill = {
-    skill: "Skilled Team Member",   
-    img: "src/assets/team_member.svg",
+    skill: "Skilled Team Member",
+    img: './../assets/code.svg',
     alt: "Skilled Team Member icon",
 };
 

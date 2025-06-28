@@ -18,7 +18,6 @@ const ProjectBlock: React.FC<ProjectProps> = ({ project }) => {
       window.open(project.githubLink, "_blank", "noopener,noreferrer");
       }
     }
-    console.log(project.featureImg);
     return (
         <div className="flex flex-row min-h-[40vh] min-w-[70vw] border border-orange-500 rounded-[12px] overflow-hidden">
           <div className="w-1/2">

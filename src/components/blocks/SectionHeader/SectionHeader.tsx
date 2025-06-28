@@ -6,7 +6,8 @@ interface SectionHeaderProps {
 
 const SectionHeader: React.FC<SectionHeaderProps> = ({ bullet }) => {
   return (
-    <div className="flex rounded-full w-max border border-white bg-gray-500 p-2">
+    <div className="flex rounded-full w-max border-2 border-[#00f0ff]
+        bg-gradient-to-br from-[#ffffff0a] to-[#e0f7fa0a] bg-gray-800 p-2">
       <img
         src={bullet.img}
         alt={bullet.alt}

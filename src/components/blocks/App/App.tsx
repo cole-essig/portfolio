@@ -28,7 +28,7 @@ const App: React.FC = () => {
           <Footer />
         </div>
       </div>
-     <Meteor />
+     {/* <Meteor /> */}
     </div>
   )
 }

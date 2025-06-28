@@ -12,9 +12,9 @@ const RotatingWords: React.FC = () => {
     return () => clearInterval(interval);
   }, []);
 return (
-  <div>
+  <>
       {words[index]}
-  </div>
+  </>
   )
 }
 
