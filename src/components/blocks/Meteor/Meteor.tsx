@@ -1,15 +1,27 @@
 import { useEffect, useRef } from 'react';
 
 export default function MeteorCanvas() {
-  const canvasRef = useRef(null);
-  const meteors = useRef([]);
+  const canvasRef = useRef<HTMLCanvasElement | null>(null);
+  type Meteor = {
+    x: number;
+    y: number;
+    vx: number;
+    vy: number;
+    length: number;
+    opacity: number;
+    width: number;
+  };
+  const meteors = useRef<Meteor[]>([]);
 
   useEffect(() => {
     const canvas = canvasRef.current;
+    if (!canvas) return;
     const ctx = canvas.getContext('2d');
+    if (!ctx) return;
 
     // Resize canvas
     function resize() {
+      if (!canvas) return;
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
     }
@@ -17,10 +29,11 @@ export default function MeteorCanvas() {
     resize();
 
     function createMeteor() {
+      if (!canvas) return;
       const startX = Math.random() * canvas.width;
       const startY = -20;
       const angle = Math.random() * Math.PI / 4 + Math.PI / 8;
-      const speed = Math.random() * 4 + 2;
+      const speed = Math.random() * 4 + 6;
 
       meteors.current.push({
         x: startX,
@@ -33,7 +46,8 @@ export default function MeteorCanvas() {
       });
     }
 
-    function drawMeteor(meteor) {
+    function drawMeteor(meteor: Meteor) {
+      if (!ctx) return;
       ctx.beginPath();
       ctx.moveTo(meteor.x, meteor.y);
       ctx.lineTo(
@@ -47,12 +61,13 @@ export default function MeteorCanvas() {
       ctx.stroke();
     }
 
-    let animationFrameId;
+    let animationFrameId: number;
 
     function animate() {
+      if (!canvas || !ctx) return;
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-      if (Math.random() < 0.05) {
+      if (Math.random() < 0.03) {
         createMeteor();
       }
 
@@ -83,7 +98,7 @@ export default function MeteorCanvas() {
   return (
     <canvas
       ref={canvasRef}
-      style={{ position: 'fixed', top: 0, left: 0, zIndex: -1 }}
+      style={{ position: 'fixed', top: 0, left: 0, zIndex: 0 }}
     />
   );
 }

@@ -1,40 +1,65 @@
-import React, { useRef, useEffect } from "react";
-import { gsap } from "gsap";
+import React, { useRef, useEffect } from 'react';
+import { gsap } from 'gsap';
 
-const MiniCube = ({ name }) => {
-  const miniCubeRef = useRef(null);
+const MiniCube: React.FC<{ name: string }> = ({ name }) => {
+  const cubeRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const cube = miniCubeRef.current;
+    const cube = cubeRef.current;
     if (!cube) return;
 
     gsap.to(cube, {
-      rotationX: "+=360",
-      rotationY: "+=360",
+      rotateX: '+=360',
+      rotateY: '+=360',
       duration: 6,
       repeat: -1,
-      ease: "linear"
+      ease: 'linear',
     });
   }, []);
 
   return (
-    <div className="relative w-10 h-10 perspective-[600px] my-12">
-      <div className="absolute left-1/2 top-1/2 -translate-x-[35px] -translate-y-[60px] translate-z-0 text-xl font-bold text-slate-100 z-10 drop-shadow-[0_0_10px_rgba(204,230,255,0.6)]">
+    <div className="relative w-10 h-10 my-12" style={{ perspective: '800px' }}>
+      <div className="absolute left-1/2 top-0 transform -translate-x-1/2 -translate-y-full text-sm font-bold text-slate-100 drop-shadow-md z-10">
         {name}
       </div>
+
       <div
-        className="relative w-full h-full transform-style-preserve-3d"
-        ref={miniCubeRef}
+        ref={cubeRef}
+        className="relative w-full h-full"
+        style={{
+          transformStyle: 'preserve-3d',
+          transform: 'rotateX(0deg) rotateY(0deg)',
+        }}
       >
-        <div className="absolute w-10 h-10 bg-[rgba(212,27,209,0.85)] border border-black backface-hidden translate-z-5" />
-        <div className="absolute w-10 h-10 bg-[rgba(212,27,209,0.85)] border border-black backface-hidden rotate-y-180 translate-z-5" />
-        <div className="absolute w-10 h-10 bg-[rgba(212,27,209,0.85)] border border-black backface-hidden rotate-y-90 translate-z-5" />
-        <div className="absolute w-10 h-10 bg-[rgba(212,27,209,0.85)] border border-black backface-hidden -rotate-y-90 translate-z-5" />
-        <div className="absolute w-10 h-10 bg-[rgba(212,27,209,0.85)] border border-black backface-hidden rotate-x-90 translate-z-5" />
-        <div className="absolute w-10 h-10 bg-[rgba(212,27,209,0.85)] border border-black backface-hidden -rotate-x-90 translate-z-5" />
+        <div
+          className="absolute w-full h-full bg-pink-500 border border-black"
+          style={{ transform: 'translateZ(20px)' }}
+        />
+        <div
+          className="absolute w-full h-full bg-pink-500 border border-black"
+          style={{ transform: 'rotateY(180deg) translateZ(20px)' }}
+        />
+        <div
+          className="absolute w-full h-full bg-pink-500 border border-black"
+          style={{ transform: 'rotateY(90deg) translateZ(20px)' }}
+        />
+        <div
+          className="absolute w-full h-full bg-pink-500 border border-black"
+          style={{ transform: 'rotateY(-90deg) translateZ(20px)' }}
+        />
+        <div
+          className="absolute w-full h-full bg-pink-500 border border-black"
+          style={{ transform: 'rotateX(90deg) translateZ(20px)' }}
+        />
+        <div
+          className="absolute w-full h-full bg-pink-500 border border-black"
+          style={{ transform: 'rotateX(-90deg) translateZ(20px)' }}
+        />
       </div>
     </div>
   );
 };
 
 export default MiniCube;
+
+

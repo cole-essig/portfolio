@@ -8,6 +8,7 @@ import WorkExp from "../WorkExp/WorkExp"
 import StrengthSkills from "../StrengthSkills/StrengthSkills"
 import ContactSection from "../ContactSection/ContactSection"
 import Footer from "../Footer/Footer"
+import Meteor from "../Meteor/Meteor"
  
 const App: React.FC = () => {
   return (
@@ -27,6 +28,7 @@ const App: React.FC = () => {
           <Footer />
         </div>
       </div>
+     <Meteor />
     </div>
   )
 }
