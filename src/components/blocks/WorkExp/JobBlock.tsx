@@ -1,13 +1,15 @@
 import type { Job, Bullet } from "@/components/types/types";
 import { Badge } from "@/components/ui/badge";
 import SectionHeader from "../SectionHeader/SectionHeader";
+import CodeIcon from "@/assets/code.svg";
+
 interface JobBlockProps {
     job: Job;
 }
 
 const JobBlock: React.FC<JobBlockProps> = ({ job }) => {
     const bullet: Bullet = {
-        img: "/assets/code.svg",
+        img: CodeIcon,
         alt: job.date,
         title: job.date
     };

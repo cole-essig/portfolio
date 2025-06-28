@@ -32,27 +32,27 @@ const MiniCube: React.FC<{ name: string }> = ({ name }) => {
         }}
       >
         <div
-          className="absolute w-full h-full bg-[#00f0ff] border-black"
+          className="absolute w-full h-full bg-[#FFC800] border-black"
           style={{ transform: 'translateZ(20px)' }}
         />
         <div
-          className="absolute w-full h-full bg-[#00f0ff] border border-black"
+          className="absolute w-full h-full bg-[#FFC800] border border-black"
           style={{ transform: 'rotateY(180deg) translateZ(20px)' }}
         />
         <div
-          className="absolute w-full h-full bg-[#00f0ff] border border-black"
+          className="absolute w-full h-full bg-[#FFC800] border border-black"
           style={{ transform: 'rotateY(90deg) translateZ(20px)' }}
         />
         <div
-          className="absolute w-full h-full bg-[#00f0ff] border border-black"
+          className="absolute w-full h-full bg-[#FFC800] border border-black"
           style={{ transform: 'rotateY(-90deg) translateZ(20px)' }}
         />
         <div
-          className="absolute w-full h-full bg-[#00f0ff] border border-black"
+          className="absolute w-full h-full bg-[#FFC800] border border-black"
           style={{ transform: 'rotateX(90deg) translateZ(20px)' }}
         />
         <div
-          className="absolute w-full h-full bg-[#00f0ff] border border-black"
+          className="absolute w-full h-full bg-[#FFC800] border border-black"
           style={{ transform: 'rotateX(-90deg) translateZ(20px)' }}
         />
       </div>

@@ -6,22 +6,6 @@ interface SkillsCardProps {
 }
 
 const SkillsCard: React.FC<SkillsCardProps> = ({ skill }) => {
-//     return (
-//         <div 
-//             className="group relative flex flex-col w-full max-w-[300px] min-h-[175px] p-[15px]
-//             bg-gray-800 rounded-[12px] border-2 border-[#00f0ff]
-//             bg-gradient-to-br from-[#ffffff0a] to-[#e0f7fa0a]
-//             shadow-[0_0_0_0_rgba(0,240,255,0)]
-//             transition-all duration-300 ease-out
-//             hover:-translate-y-2 hover:scale-[1.02]
-//             hover:shadow-[0_10px_30px_rgba(0,240,255,0.45),0_0_60px_rgba(255,255,255,0.08)]
-//             backdrop-blur-md"
-//         >
-//             <img src={skill.img} alt={skill.alt} className="w-[60px] h-[60px] mb-4" />
-//             <p className="text-white text-xl font-semibold text-center">{skill.skill}</p>
-//         </div>
-//     )
-// }
 const cubeRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -43,9 +27,6 @@ const cubeRef = useRef<HTMLDivElement>(null);
       {skill.skill}
       <img src={skill.img} alt={skill.alt} className="w-[60px] h-[60px] drop-shadow-md mt-[35px]" />
     </div>
-   {/* <div className="absolute left-1/2 top-[0px] transform -translate-x-1/2 z-10">
-      <img src={skill.img} alt={skill.alt} className="w-[60px] h-[60px] drop-shadow-md" />
-    </div> */}
 
     <div
       ref={cubeRef}

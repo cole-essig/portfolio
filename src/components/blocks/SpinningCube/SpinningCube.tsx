@@ -95,7 +95,7 @@ const SpinningCube: React.FC = () => {
           ].map((transform, idx) => (
             <div
               key={idx}
-              className="absolute w-full h-full bg-blue-700/70 border border-blue-700/80 shadow-[0_0_10px_rgba(251,250,250,0.7),0_0_20px_rgba(246,245,246,0.4)] backface-visible"
+              className="absolute w-full h-full bg-[#036655] border border-blue-700/80 shadow-[0_0_10px_rgba(251,250,250,0.7),0_0_20px_rgba(246,245,246,0.4)] backface-visible"
               style={{ transform }}
             />
           ))}

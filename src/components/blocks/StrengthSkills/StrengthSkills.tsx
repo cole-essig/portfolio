@@ -2,6 +2,7 @@ import SectionHeader from "../SectionHeader/SectionHeader";
 import type { Bullet, Skill } from "@/components/types/types";
 import { fullStackReactDev, python, java, projectManagement, webDesign, typecript, adaptiveLearning, skilledTeamMember } from "@/utils/skills";
 import SkillsCard from "./SkillsCard";
+import CodeIcon from "@/assets/code.svg";
 
 const StrengthSkills: React.FC = () => {
     const skills: Skill[] = [
@@ -15,7 +16,7 @@ const StrengthSkills: React.FC = () => {
         skilledTeamMember
     ];
     const bullet: Bullet = {
-        img: "/assets/code.svg",
+        img: CodeIcon,
         alt: "Strengths and Skills icon",
         title: "Key Areas Where I Add Value",
     }

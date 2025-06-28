@@ -2,6 +2,7 @@ import JobBlock from "./JobBlock";
 import SectionHeader from "../SectionHeader/SectionHeader";
 import type { Jobs, Bullet } from "@/components/types/types";
 import { SchoonLandscape, FreeLanceWebDev, OFCA } from "@/utils/jobs";
+import CodeIcon from "@/assets/code.svg";
 
 
 const WorkExp: React.FC = () => {
@@ -12,7 +13,7 @@ const WorkExp: React.FC = () => {
   ];
 
   const bullet: Bullet = {
-    img: "/assets/code.svg",
+    img: CodeIcon,
     alt: "Career Header",
     title: "Career Overview"
   };  
