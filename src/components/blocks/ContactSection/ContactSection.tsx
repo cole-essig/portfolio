@@ -8,12 +8,12 @@ const ContactSection: React.FC = () => {
         img: CodeIcon,
         alt: "phone icon",
         title: "Have a question? Let's talk!",
-        color: "emerald-800"
+        color: "yellow"
     };
     return(
-        <div className="flex flex-col items-center justify-center w-full h-full p-8 relative">
+        <div className="flex flex-col items-center justify-center w-full h-full mt-[100px] p-8 relative">
             <SectionHeader bullet={bullet} />
-            <h2 className=" text-white text-3xl font-bold text-center mb-8">
+            <h2 className=" text-white text-3xl font-bold text-center mt-[25px] mb-8">
                 Get in Touch - Lets Connect!
             </h2>
             <div className="flex flex-row">

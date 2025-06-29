@@ -11,6 +11,7 @@ import {
   FormMessage, 
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
 
 const ContactFormSchema = z.object({
   name: z.string().min(1, "Name is required"),
@@ -34,7 +35,14 @@ const ContactForm: React.FC = () => {
   };
 
   return(
-    <div className="w-[30vw] h-[60vh] border border-white bg-gray-800 ml-0 mr-auto rounded-[15px] p-6 z-10">
+    <div 
+      className="w-[30vw] h-[60vh] bg-[#040917] rounded-[12px] p-[80px]
+      shadow-[0_4px_12px_rgba(255,255,255,0.06)]
+      transition-transform duration-1000 ease-[cubic-bezier(0.25,0.8,0.25,1)]
+      hover:transform hover:-translate-y-[2px] hover:scale-[1.02]
+      hover:shadow-[0_10px_30px_rgba(0,240,255,0.45),0_0_60px_rgba(255,255,255,0.08)]
+      backdrop-blur-md"
+    >
       <Form {...form}>
         <form className="space-y-4" onSubmit={form.handleSubmit(onSubmit)}>
           <FormField
@@ -42,9 +50,9 @@ const ContactForm: React.FC = () => {
             name="name"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Name</FormLabel>
+                <FormLabel className="text-white">Name</FormLabel>
                 <FormControl>
-                  <Input placeholder="Your Name" {...field} />
+                  <Input placeholder="Your Name" {...field} className="border-2" />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -56,9 +64,9 @@ const ContactForm: React.FC = () => {
             name="email"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Email</FormLabel>
+                <FormLabel className="text-white">Email</FormLabel>
                 <FormControl>
-                  <Input placeholder="Your Email" {...field} />
+                  <Input placeholder="Your Email" {...field} className="border-2"/>
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -70,18 +78,27 @@ const ContactForm: React.FC = () => {
             name="message"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Message</FormLabel>
+                <FormLabel className="text-white">Message</FormLabel>
                 <FormControl>
-                  <Input placeholder="Your Message" {...field} />
+                  <Textarea
+                    placeholder="Your message"
+                    {...field}
+                    className="w-full min-h-[200px] text-white placeholder:text-gray-400 p-4 resize-none border-2"
+                  />
                 </FormControl>
                 <FormMessage />
               </FormItem>
             )}
           />
 
-          <Button type="submit" className="w-full bg-green-500 hover:bg-green-600">
+          <Button
+            type="submit"
+            variant="ghost"
+            className="w-full bg-white text-white border-2 border-white p-6 text-[22px] font-bold"
+          >
             Send Message
           </Button>
+
         </form>
       </Form>
     </div>

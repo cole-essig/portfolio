@@ -3,12 +3,12 @@ import { gsap } from 'gsap';
 import MiniCube from './MiniCube';
 
 const MINI_CUBES = [
-  { speed: 6, inclination: 30, name: 'Dicks' },
-  { speed: 8, inclination: 120, name: 'Bicks' },
-  { speed: 10, inclination: 180, name: 'Tricks' },
-  { speed: 12, inclination: 220, name: 'Eicks' },
-  { speed: 14, inclination: 60, name: 'Ricks' },
-  { speed: 16, inclination: 150, name: 'Sicks' },
+  { speed: 6, inclination: 30, name: 'JavaScript' },
+  { speed: 8, inclination: 120, name: 'Typescript' },
+  { speed: 10, inclination: 180, name: 'Python' },
+  { speed: 12, inclination: 220, name: 'Node' },
+  { speed: 14, inclination: 60, name: 'Java' },
+  { speed: 16, inclination: 150, name: 'Express' },
 ];
 
 const ORBIT_RADIUS_X = 420;

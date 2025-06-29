@@ -29,7 +29,7 @@ const cubeRef = useRef<HTMLDivElement>(null);
   >
     <div className="absolute flex flex-col left-1/2 top-[70px] transform -translate-x-1/2 -translate-y-full text-md font-bold text-slate-100 drop-shadow-md z-10">
       <p className="text-white">{skill.skill}</p>
-      <img src={skill.img} alt={skill.alt} className="w-[60px] h-[60px] drop-shadow-md mt-[35px]" />
+      {/* <img src={skill.img} alt={skill.alt} className="w-[60px] h-[60px] drop-shadow-md mt-[35px]" /> */}
     </div>
 
     <div
@@ -43,27 +43,27 @@ const cubeRef = useRef<HTMLDivElement>(null);
       }}
     >
       <div
-        className="absolute bg-[#00f0ff] border border-black"
+        className="absolute bg-[#03b98b] border border-3 border-black"
         style={{ width: '100px', height: '100px', transform: 'translateZ(50px)' }}
       />
       <div
-        className="absolute bg-[#00f0ff] border border-black"
+        className="absolute bg-[#03b98b] border border-3 border-black"
         style={{ width: '100px', height: '100px', transform: 'rotateY(180deg) translateZ(50px)' }}
       />
       <div
-        className="absolute bg-[#00f0ff] border border-black"
+        className="absolute bg-[#03b98b] border border-3 border-black"
         style={{ width: '100px', height: '100px', transform: 'rotateY(90deg) translateZ(50px)' }}
       />
       <div
-        className="absolute bg-[#00f0ff] border border-black"
+        className="absolute bg-[#03b98b] border border-3 border-black"
         style={{ width: '100px', height: '100px', transform: 'rotateY(-90deg) translateZ(50px)' }}
       />
       <div
-        className="absolute bg-[#00f0ff] border border-black"
+        className="absolute bg-[#03b98b] border border-3 border-black"
         style={{ width: '100px', height: '100px', transform: 'rotateX(90deg) translateZ(50px)' }}
       />
       <div
-        className="absolute bg-[#00f0ff] border border-black"
+        className="absolute bg-[#03b98b] border border-3 border-black"
         style={{ width: '100px', height: '100px', transform: 'rotateX(-90deg) translateZ(50px)' }}
       />
     </div>

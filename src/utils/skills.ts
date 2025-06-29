@@ -2,7 +2,7 @@ import type { Skill, Skills } from "@/components/types/types";
 import CodeIcon from "@/assets/code.svg";
 
 export const fullStackReactDev: Skill = {
-    skill: "Full-Stack React Developer",
+    skill: "Full-Stack Developer",
     img: CodeIcon,
     alt: "Full Stack Developer icon",
 };

@@ -4,10 +4,10 @@ import Icon from "@/assets/code.svg";
 
 const StatsBlock: React.FC = () => {
   const stats: Stats = [
-    { title: "3+", img: Icon, alt: "", description: "Years of Experience." },
-    { title: "30+", img: Icon, alt: "", description: "Satisfied Clients" },
-    { title: "25+", img: Icon, alt: "", description: "Completed Projects" },
-    { title: "100's", img: Icon, alt: "", description: "Positive Reviews" },
+    { title: "3+", img: Icon, alt: "icon", description: "Years of Experience." },
+    { title: "30+", img: Icon, alt: "icon", description: "Satisfied Clients" },
+    { title: "25+", img: Icon, alt: "icon", description: "Completed Projects" },
+    { title: "100's", img: Icon, alt: "icon", description: "Positive Reviews" },
   ];
 
   return (

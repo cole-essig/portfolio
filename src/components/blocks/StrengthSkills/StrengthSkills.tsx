@@ -19,17 +19,17 @@ const StrengthSkills: React.FC = () => {
         img: CodeIcon,
         alt: "Strengths and Skills icon",
         title: "Key Areas Where I Add Value",
-        color: "emerald-800"
+        color: "emerald"
     }
   return(
-    <div className="flex flex-col w-full h-full items-center justify-center mt-[80px] p-[40px]">
+    <div className="flex flex-col w-full h-full items-center justify-center mt-[80px] bg-[#040917] rounded-[12px] p-[40px]">
         <SectionHeader bullet={bullet} />
         <h2 className="text-white font-bold text-[32px] mt-[20px]">
             My Strengths and Contributions
         </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[40px] mt-[40px] w-full max-w-6xl">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[40px] mt-[50px] w-full max-w-6xl">
             {skills.map((skill, index) => (
-                <div key={index} className="w-full h-[180px] flex">
+                <div key={index} className="w-full h-[180px] flex mt-[12px]">
                     <SkillsCard skill={skill} />
                 </div>
             ))}

@@ -10,7 +10,7 @@ const FeaturedProjects: React.FC = () => {
     img: CodeIcon,
     alt: "icon",
     title: "Built with cutting edge frameworks and tools",
-    color: "yellow-400"
+    color: "yellow"
   }
 // Needs API call here, will hard code for now
   const projects: Projects = FeatProj 

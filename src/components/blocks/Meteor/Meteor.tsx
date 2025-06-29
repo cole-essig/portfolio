@@ -1,6 +1,9 @@
 import { useEffect, useRef } from 'react';
+interface MeteorCanvasProps {
+  stopCreation: number
+}
 
-export default function MeteorCanvas() {
+const MeteorCanvas: React.FC<MeteorCanvasProps> = ({ stopCreation }) => {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   type Meteor = {
     x: number;
@@ -42,7 +45,7 @@ export default function MeteorCanvas() {
         vy: Math.sin(angle) * speed,
         length: Math.random() * 60 + 40,
         opacity: Math.random() * 0.5 + 0.3,
-        width: Math.random() * 1.5 + 0.5,
+        width: Math.random() * 1.5 + 1,
       });
     }
 
@@ -54,7 +57,7 @@ export default function MeteorCanvas() {
         meteor.x - meteor.vx * meteor.length,
         meteor.y - meteor.vy * meteor.length
       );
-      ctx.strokeStyle = `rgba(173, 216, 230, ${meteor.opacity})`;
+      ctx.strokeStyle = `rgba(255, 200, 0, ${meteor.opacity})`;
       ctx.lineWidth = meteor.width;
       ctx.shadowBlur = 15;
       ctx.shadowColor = 'white';
@@ -67,7 +70,7 @@ export default function MeteorCanvas() {
       if (!canvas || !ctx) return;
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-      if (Math.random() < 0.03) {
+      if (Math.random() < stopCreation) {
         createMeteor();
       }
 
@@ -102,3 +105,5 @@ export default function MeteorCanvas() {
     />
   );
 }
+
+export default MeteorCanvas;

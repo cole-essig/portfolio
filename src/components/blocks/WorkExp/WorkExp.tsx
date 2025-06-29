@@ -16,10 +16,10 @@ const WorkExp: React.FC = () => {
     img: CodeIcon,
     alt: "Career Header",
     title: "Career Overview",
-    color: "emerald-800"
+    color: "emerald"
   };  
     return (
-        <div className="flex flex-col w-full max-w-[1200px] mx-auto mt-[100px] gap-[20px]">
+        <div className="flex flex-col w-full max-w-[1200px] mx-auto mt-[100px] gap-[50px]">
           <div className="flex flex-col items-center justify-center">
             <SectionHeader bullet={bullet}/>
             <h2 className="text-white font-bold text-[32px]">Professional Work Experience</h2>

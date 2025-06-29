@@ -19,7 +19,7 @@ const MiniCube: React.FC<{ name: string }> = ({ name }) => {
 
   return (
     <div className="relative w-10 h-10 my-12" style={{ perspective: '800px' }}>
-      <div className="absolute left-1/2 top-0 transform -translate-x-1/2 -translate-y-full text-sm font-bold text-slate-100 drop-shadow-md z-10">
+      <div className="absolute left-1/2 top-[-8px] transform -translate-x-1/2 -translate-y-full text-sm font-bold text-slate-100 drop-shadow-md z-10">
         {name}
       </div>
 
