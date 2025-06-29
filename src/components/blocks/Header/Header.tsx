@@ -5,7 +5,6 @@ interface HeaderProps {
 
 const Header: React.FC<HeaderProps> = ({ setMeteor }) => {
     const getInTouch = (setMeteor: Function) => {
-        console.log("HEY You, Be Fren!!")
         setMeteor(true)
     }
     return (

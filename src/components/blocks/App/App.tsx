@@ -1,4 +1,6 @@
 import "./App.css"
+import "@fontsource/montserrat/400.css"
+import "@fontsource/montserrat/700.css"
 import { useState, useEffect } from "react"
 import Header from "../Header/Header"
 import Headline from "../Headline/Headline"
@@ -22,17 +24,18 @@ const App: React.FC = () => {
     }, 6000);
     const timer_two = setTimeout(() => {
       setStopCreating(true)
-    }, 4000)
+    }, 2000)
 
     return () => {
       clearTimeout(timer)
       clearTimeout(timer_two)
+      setStopCreating(false)
     }
   }, [startMeteor])
 
   return (
     <>
-    <div className="App">
+    <div className="App font-montserrat">
       <div className="w-screen h-screen p-[80px]">
         <Header setMeteor={setIsMeteor} />
         <Headline />

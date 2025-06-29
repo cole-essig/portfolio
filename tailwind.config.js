@@ -6,6 +6,10 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        montserrat: ['Montserrat', 'sans-serif'],
+        sans: ['Montserrat', 'ui-sans-serif', 'system-ui'],
+      },
       transformStyle: {
         'preserve-3d': 'preserve-3d',
       },
