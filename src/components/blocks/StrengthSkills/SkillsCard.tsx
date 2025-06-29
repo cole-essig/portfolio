@@ -22,9 +22,13 @@ const cubeRef = useRef<HTMLDivElement>(null);
   }, []);
 
  return (
-  <div className="relative w-[100px] h-[100px] my-12">
+  <div 
+    className="relative w-[100px] h-[100px] my-12
+    transition-transform duration-1000 ease-[cubic-bezier(0.25,0.8,0.25,1)]
+    hover:transform hover:-translate-y-[15px] hover:scale-[1.02]"
+  >
     <div className="absolute flex flex-col left-1/2 top-[70px] transform -translate-x-1/2 -translate-y-full text-md font-bold text-slate-100 drop-shadow-md z-10">
-      {skill.skill}
+      <p className="text-white">{skill.skill}</p>
       <img src={skill.img} alt={skill.alt} className="w-[60px] h-[60px] drop-shadow-md mt-[35px]" />
     </div>
 

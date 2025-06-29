@@ -11,6 +11,7 @@ export interface Bullet {
     img: string,
     alt: string,
     title: string,
+    color: string
 };
 
 export interface Project {

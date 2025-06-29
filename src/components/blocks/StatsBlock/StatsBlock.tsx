@@ -1,12 +1,13 @@
 import StatsCard from "./StatsCard";
 import type { Stats } from "../../types/types";
+import Icon from "@/assets/code.svg";
 
 const StatsBlock: React.FC = () => {
   const stats: Stats = [
-    { title: "3+", img: "", alt: "", description: "Years of Experience." },
-    { title: "30+", img: "", alt: "", description: "Satisfied Clients" },
-    { title: "25+", img: "", alt: "", description: "Completed Projects" },
-    { title: "100's", img: "", alt: "", description: "Positive Reviews" },
+    { title: "3+", img: Icon, alt: "", description: "Years of Experience." },
+    { title: "30+", img: Icon, alt: "", description: "Satisfied Clients" },
+    { title: "25+", img: Icon, alt: "", description: "Completed Projects" },
+    { title: "100's", img: Icon, alt: "", description: "Positive Reviews" },
   ];
 
   return (

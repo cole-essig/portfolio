@@ -8,6 +8,7 @@ const ContactSection: React.FC = () => {
         img: CodeIcon,
         alt: "phone icon",
         title: "Have a question? Let's talk!",
+        color: "emerald-800"
     };
     return(
         <div className="flex flex-col items-center justify-center w-full h-full p-8 relative">

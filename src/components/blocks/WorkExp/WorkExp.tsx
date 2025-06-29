@@ -15,7 +15,8 @@ const WorkExp: React.FC = () => {
   const bullet: Bullet = {
     img: CodeIcon,
     alt: "Career Header",
-    title: "Career Overview"
+    title: "Career Overview",
+    color: "emerald-800"
   };  
     return (
         <div className="flex flex-col w-full max-w-[1200px] mx-auto mt-[100px] gap-[20px]">
