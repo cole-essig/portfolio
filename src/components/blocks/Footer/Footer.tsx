@@ -3,7 +3,7 @@ import linkedInIcon from "../../../assets/linkedin_icon.svg";
 
 const Footer: React.FC = () => {
     return (
-        <div className="w-full flex flex-row jusitfy-between">
+        <div className="w-full flex flex-row jusitfy-between mt-[200px]">
             <div className="w-full h-[100px] flex items-center justify-center">
                 <p className="text-white text-lg">© 2023 Cole Essig. All rights reserved.</p>
             </div>

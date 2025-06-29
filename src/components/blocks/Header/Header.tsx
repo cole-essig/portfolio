@@ -13,16 +13,16 @@ const Header: React.FC<HeaderProps> = ({ setMeteor }) => {
                 Cole Essig
             </h1>
             <div className="flex flex-row gap-[20px]">
-                <h2 className="text-[#03B98B] font-bold text-[32px] hover:scale-105 transition-all duration-200 ease-in-out cursor-pointer">
+                <h2 className="text-[#03B98B] font-bold text-[32px] hover:scale-115 transition-all duration-200 ease-in-out cursor-pointer">
                     Projects
                 </h2>
-                <h2 className="text-[#03B98B] font-bold text-[32px] hover:scale-105 transition-all duration-200 ease-in-out cursor-pointer">
+                <h2 className="text-[#03B98B] font-bold text-[32px] hover:scale-115 transition-all duration-200 ease-in-out cursor-pointer">
                     Experience
                 </h2>
-                <h2 className="text-[#03B98B] font-bold text-[32px] hover:scale-105 transition-all duration-200 ease-in-out cursor-pointer">
+                <h2 className="text-[#03B98B] font-bold text-[32px] hover:scale-115 transition-all duration-200 ease-in-out cursor-pointer">
                     Skills
                 </h2>
-                <h2 className="text-[#03B98B] font-bold text-[32px] hover:scale-105 transition-all duration-200 ease-in-out cursor-pointer">
+                <h2 className="text-[#03B98B] font-bold text-[32px] hover:scale-115 transition-all duration-200 ease-in-out cursor-pointer">
                     Testimonials
                 </h2>
             </div>

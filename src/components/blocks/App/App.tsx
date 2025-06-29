@@ -36,7 +36,7 @@ const App: React.FC = () => {
   return (
     <>
     <div className="App font-montserrat">
-      <div className="w-screen h-screen p-[80px]">
+      <div className="w-screen h-screen pt-10 pr-20 pb-10 pl-20">
         <Header setMeteor={setIsMeteor} />
         <Headline />
       </div>
@@ -52,7 +52,7 @@ const App: React.FC = () => {
         </div>
       </div>
     </div>
-    {startMeteor? <Meteor stopCreation={stopCreating? 0 : 0.1}/> : ""}
+    {startMeteor? <Meteor stopCreation={stopCreating? 0 : 0.07}/> : ""}
     </>
   )
 }

@@ -20,9 +20,8 @@ const WorkExp: React.FC = () => {
   };  
     return (
         <div className="flex flex-col w-full max-w-[1200px] mx-auto mt-[100px] gap-[50px]">
-          <div className="flex flex-col items-center justify-center">
+          <div className="flex flex-col items-center justify-center mb-[50px]">
             <SectionHeader bullet={bullet}/>
-            <h2 className="text-white font-bold text-[32px]">Professional Work Experience</h2>
           </div>
           {jobs.map((job, index) => (
             <JobBlock key={index} job={job} /> 

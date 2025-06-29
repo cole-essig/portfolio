@@ -10,7 +10,7 @@ const SectionHeader: React.FC<SectionHeaderProps> = ({ bullet }) => {
     emerald: "border-[#036655]",
   }
   return (
-    <div className={`flex rounded-full w-max border-2 ${colorVariant[bullet.color]?? ""}
+    <div className={`flex rounded-full w-max  ${colorVariant[bullet.color]?? ""}
         bg-gradient-to-br from-[#ffffff0a] to-[#e0f7fa0a] bg-gray-800 p-5`}>
       <img
         src={bullet.img}

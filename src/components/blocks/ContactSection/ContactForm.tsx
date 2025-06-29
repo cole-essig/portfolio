@@ -36,7 +36,7 @@ const ContactForm: React.FC = () => {
 
   return(
     <div 
-      className="w-[30vw] h-[60vh] bg-[#040917] rounded-[12px] p-[80px]
+      className="w-[30vw] h-[60vh] bg-[#0b2220] rounded-[12px] p-[60px]
       shadow-[0_4px_12px_rgba(255,255,255,0.06)]
       transition-transform duration-1000 ease-[cubic-bezier(0.25,0.8,0.25,1)]
       hover:transform hover:-translate-y-[2px] hover:scale-[1.02]
