@@ -1,8 +1,6 @@
 import React, { useRef, useEffect, useState } from "react";
 import gsap from "gsap";
 import { ScrambleTextPlugin } from "gsap/all";
-// Make sure ScrambleTextPlugin is imported if needed
-// import { ScrambleTextPlugin } from "gsap/ScrambleTextPlugin";
 
 gsap.registerPlugin(ScrambleTextPlugin);
 
@@ -14,17 +12,24 @@ const ContactAnimation: React.FC = () => {
         if (!start) return
         if (textRef.current) {
             gsap.to(textRef.current, {
-                duration: 3,
-                scrambleText: "This is the New Text"
+                duration: 4,
+                scrambleText: "I'll get Back to You ASAP"
             });
         }
+        setTimeout(() => {
+            gsap.to((textRef.current), {
+                duration: 4,
+                scrambleText: 'Creating Connections is the Gateway to Success'
+            });
+        }, 8000)
+
         setStart(false)
         return () => setStart(false)
     }, [start]);
 
     return (
         <div onClick={() => setStart(!start)}>
-          <p ref={textRef} className="text-white">Yo big dicky is the shit homey</p>
+          <p ref={textRef} className="text-white font-bold text-[40px] text-wrap">Creating Connections is the Gateway to Success</p>
         </div>
     )
 }

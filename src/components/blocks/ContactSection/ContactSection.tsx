@@ -16,7 +16,7 @@ const ContactSection: React.FC = () => {
             <SectionHeader bullet={bullet} />
             <div className="flex flex-row mt-[100px]">
               <ContactForm />
-              <div className="w-[55vw] ml-[15px] h-[60vh] border border-green-500 z-0">
+              <div className="w-[55vw] ml-[15px] h-[60vh] flex justify-center items-center border border-green-500 z-0">
                 <ContactAnimation />
               </div>
             </div>
