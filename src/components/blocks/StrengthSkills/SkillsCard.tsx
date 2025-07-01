@@ -1,6 +1,7 @@
 import React, { useRef, useEffect, useState } from "react";
 import type { Skill } from "@/components/types/types";
 import { gsap } from "gsap/gsap-core";
+import SkillsChartAnima from "./SkillsChartAnima";
 
 interface SkillsCardProps {
     skill: Skill;
@@ -13,68 +14,60 @@ const SkillsCard: React.FC<SkillsCardProps> = ({ skill }) => {
 
   const boxRef = useRef<HTMLDivElement>(null);
   const fakeRef = useRef<HTMLDivElement>(null);
-  const divSkillRef = useRef<HTMLDivElement>(null);
   const timelineRef = useRef<gsap.core.Timeline | null>(null)
 
-  const onClick = () => {
-    if (!timelineRef.current) return 
-
-    const newState: boolean = (!clicked)
+    const onClick = () => {
+    const newState = !clicked;
     setIsClicked(newState);
- 
-    newState ? timelineRef.current.play() : timelineRef.current.reverse();
-    if (!newState) setIsModal(false) 
+
+    if (newState && boxRef.current) {
+      const vw = window.innerWidth;
+      const vh = window.innerHeight;
+
+      const box = boxRef.current;
+      const rect = box.getBoundingClientRect();
+
+      const tl = gsap.timeline({
+        defaults: { ease: "power2.inOut" },
+        onReverseComplete: () => { setFakeBox(false); setIsModal(false) },
+        onComplete: () => { setIsModal(true); }
+      });
+
+      tl.set(box, {
+        top: rect.top,
+        left: rect.left,
+        width: rect.width,
+        height: rect.height,
+        position: "fixed",
+        margin: 0,
+        zIndex: 10
+      })
+        .call(() => setFakeBox(true))
+        .fromTo(box, {
+          left: rect.left,
+          top: rect.top,
+          backgroundColor: "#03b98b"
+        }, {
+          left: vw / 2,
+          top: vh / 2,
+          x: "-50%",
+          y: "-50%",
+          backgroundColor: "#040917",
+          duration: 0.8
+        })
+        .to(box, {
+          width: vw * 0.5,
+          height: vh * 0.6,
+          duration: 0.8
+        });
+
+      timelineRef.current = tl;
+      tl.play();
+    } else {
+      timelineRef.current?.reverse();
+      setIsModal(false);
+    }
   }
-  
-  useEffect(() => {
-    if (!boxRef) return
-    if (!fakeRef) return
-
-    const vw = window.innerWidth;
-    const vh = window.innerHeight;
-    const boxLocation = boxRef.current?.getBoundingClientRect()
-    const tl = gsap.timeline({ 
-        paused: true, 
-        defaults: { ease: "power2.inOut"}, 
-        onReverseComplete: () => {setFakeBox(false); setIsModal(false)}, 
-        onComplete: () => {
-        setIsModal(true);
-      }
-    })
-
-    tl.set(boxRef.current, {
-        top: boxLocation?.top,
-        right: boxLocation?.right,
-        bottom: boxLocation?.bottom, 
-        left: boxLocation?.left,
-        width: boxLocation?.width,
-        height: boxLocation?.height, 
-        position: "fixed", 
-        zIndex: 10 
-      })
-      .call(() => { setFakeBox(true)})
-      .set(fakeRef.current, { position: "static" })
-      .fromTo(boxRef.current, { left: boxLocation?.left, top: boxLocation?.top, backgroundColor: "#03b98b" }, {
-      left: vw / 2,
-      top: vh / 2,
-      x: "-50%",
-      y: "-50%",
-      backgroundColor: "#FFC800",
-      duration: 2,
-      ease: "power2.inOut"
-      })
-      .to(boxRef.current, {
-      width: vw * 0.5,
-      height: vh * 0.6,
-      duration: 2,
-      ease: "power2.out"
-     })
-    //  .to(divSkillRef.current, { width: vw * 0.5, height: vh * 0.6, backgroundColor: "#FF1A1A", duration: 4}, "+=3")
-
-
-
-     timelineRef.current = tl
-  }, []);
 
   return (
     <>
@@ -94,12 +87,12 @@ const SkillsCard: React.FC<SkillsCardProps> = ({ skill }) => {
         <div className={!isModal ? "text-white font-bold text-[24px] min-h-[48px]" : "p-4"}>
           { !isModal ? skill.skill : 
             <div>
-              <h3 className="text-black font-bold text-[48px]">{skill.skill}</h3>
-              <p className="text-black font-bold text-[20px] mt-[80px]">{skill.description}</p>
+              <h3 className="text-white font-bold text-[48px]">{skill.skill}</h3>
+              <p className="text-white font-bold text-[20px]" style={{ margin: '60px 0 70px 0' }}>{skill.description}</p>
+              <SkillsChartAnima skill={skill} />
             </div>
           }
         </div>
-        <div ref={divSkillRef} className="w-0 h-0"></div>
       </div>
       {fakeBox ? <div className="invisible top-0 left-0 w-[202px] h-[182px] pointer-events-none" ref={fakeRef}></div> : ""}
     </>

@@ -48,7 +48,12 @@ export interface Skill {
     skill: string,
     description: string,
     img: string,
-    alt: string
+    alt: string,
+    points: {
+        proc: number,
+        bk: number,
+        os: number
+    }
 };
 
 export type Skills = Skill[];
