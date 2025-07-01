@@ -14,7 +14,6 @@ const JobBlock: React.FC<JobBlockProps> = ({ job }) => {
         img: CodeIcon,
         alt: job.date,
         title: job.date,
-        color: "yellow"
     };
 
     const isActive = job.active ? "Active" : "Past";

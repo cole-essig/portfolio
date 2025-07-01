@@ -13,8 +13,7 @@ const HeadlineContent: React.FC = () => {
     const bullet: Bullet = {
         img: CodeIcon,
         alt: "icon",
-        title: "Full-Stack Developer",
-        color: "emerald" 
+        title: "Full-Stack Developer", 
     }
 
     return (

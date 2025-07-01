@@ -5,13 +5,10 @@ interface SectionHeaderProps {
 }
 
 const SectionHeader: React.FC<SectionHeaderProps> = ({ bullet }) => {
-  const colorVariant: Record<string, string> = {
-    yellow:  "border-[#FFC800]",
-    emerald: "border-[#036655]",
-  }
   return (
-    <div className={`flex rounded-full w-max  ${colorVariant[bullet.color]?? ""}
-        bg-gradient-to-br from-[#ffffff0a] to-[#e0f7fa0a] bg-gray-800 p-5`}>
+    <div className="flex rounded-full w-max p-6
+        bg-gradient-to-br from-[#ffffff0a] to-[#e0f7fa0a] bg-gray-800 p-5"
+    >
       <img
         src={bullet.img}
         alt={bullet.alt}

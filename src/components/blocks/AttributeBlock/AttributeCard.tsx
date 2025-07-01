@@ -26,7 +26,6 @@ const AttributeCard: React.FC<AttributeCardProps> = ({ attribute }) => {
           </div>
         </div>
       </div>
-
     )
 }
 

@@ -9,10 +9,9 @@ const ContactSection: React.FC = () => {
         img: CodeIcon,
         alt: "phone icon",
         title: "Have a question? Let's talk!",
-        color: "yellow"
     };
     return(
-        <div className="flex flex-col items-center justify-center w-full h-full mt-[100px] p-8 relative">
+        <div className="flex flex-col items-center justify-center w-full h-full mt-[80px] p-8 relative">
             <SectionHeader bullet={bullet} />
             <div className="flex flex-row mt-[100px]">
               <ContactForm />

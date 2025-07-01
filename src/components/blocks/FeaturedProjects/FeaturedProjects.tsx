@@ -9,8 +9,7 @@ const FeaturedProjects: React.FC = () => {
   const bullet: Bullet = {
     img: CodeIcon,
     alt: "icon",
-    title: "Built with cutting edge frameworks and tools",
-    color: "yellow"
+    title: "Built with cutting edge frameworks and tools"
   }
 // Needs API call here, will hard code for now
   const projects: Projects = FeatProj 

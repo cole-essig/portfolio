@@ -48,7 +48,7 @@ const ContactForm: React.FC = () => {
               <FormItem>
                 <FormLabel className="text-black font-bold">Name</FormLabel>
                 <FormControl>
-                  <Input placeholder="Your Name" {...field} className="border-3 border-black font-bold placeholder:white p-4" />
+                  <Input placeholder="Your Name" {...field} className="border-3 border-black font-bold !placeholder-white p-4" />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -62,7 +62,7 @@ const ContactForm: React.FC = () => {
               <FormItem>
                 <FormLabel className="text-black font-bold">Email</FormLabel>
                 <FormControl>
-                  <Input placeholder="Your Email" {...field} className="border-3 border-black font-bold placeholder:white p-4"/>
+                  <Input placeholder="Your Email" {...field} className="border-3 border-black font-bold !placeholder-white p-4"/>
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -79,7 +79,7 @@ const ContactForm: React.FC = () => {
                   <Textarea
                     placeholder="Your message"
                     {...field}
-                    className="w-full min-h-[200px] text-black font-bold placeholder:white p-4 resize-none border-3 border-black"
+                    className="w-full min-h-[200px] text-black font-bold !placeholder-white p-4 resize-none border-3 border-black"
                   />
                 </FormControl>
                 <FormMessage />

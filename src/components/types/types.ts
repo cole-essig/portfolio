@@ -11,7 +11,6 @@ export interface Bullet {
     img: string,
     alt: string,
     title: string,
-    color: string
 };
 
 export interface Project {
@@ -47,6 +46,7 @@ export type Jobs = Job[];
 
 export interface Skill {
     skill: string,
+    description: string,
     img: string,
     alt: string
 };

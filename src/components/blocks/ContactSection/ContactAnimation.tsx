@@ -9,21 +9,22 @@ const ContactAnimation: React.FC = () => {
     const [start, setStart] = useState(false)
 
     useEffect(() => {
-        if (!start) return
-        if (textRef.current) {
-            gsap.to(textRef.current, {
-                duration: 4,
-                scrambleText: "I'll get Back to You ASAP"
-            });
-        }
-        setTimeout(() => {
-            gsap.to((textRef.current), {
-                duration: 4,
-                scrambleText: 'Creating Connections is the Gateway to Success'
-            });
-        }, 8000)
+        if (!start) return undefined
 
-        setStart(false)
+        const tl = gsap.timeline({ repeat: -1 });
+
+        tl.to(textRef.current, {
+            duration: 4,
+            scrambleText: "I'll get back to you ASAP"
+        }, "+=4")
+            .to(textRef.current, {
+                duration: 4,
+                scrambleText: "I'm Ready to be your best friend Keith"
+            }, "+=4")
+            .to(textRef.current, {
+                duration: 4,
+                scrambleText: "Creating Connections is the Gateway to Success"
+            }, '+=4') 
         return () => setStart(false)
     }, [start]);
 
