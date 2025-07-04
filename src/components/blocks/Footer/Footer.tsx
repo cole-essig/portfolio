@@ -1,9 +1,9 @@
-import githubIcon from "../../../assets/github_icon.svg";
-import linkedInIcon from "../../../assets/linkedin_icon.svg";
+import githubIcon from "../../../assets/Icons/github_icon.svg";
+import linkedInIcon from "../../../assets/Icons/linkedIn_icon.svg";
 
 const Footer: React.FC = () => {
     return (
-        <div className="w-full flex flex-row jusitfy-between mt-[200px]">
+        <div className="w-full flex flex-row justify-between mt-[200px]">
             <div className="w-full h-[100px] flex items-center justify-center">
                 <p className="text-white text-lg">© 2023 Cole Essig. All rights reserved.</p>
             </div>
@@ -24,7 +24,7 @@ const Footer: React.FC = () => {
                 </a>
             </div>
             <div className="w-full h-[100px] flex items-center justify-center">
-                <p className="text-white text-lg">Follow me online! Lets Connect! Lets Build.</p>
+                <p className="text-white text-lg">Follow me online!</p>
             </div>
         </div>
     )

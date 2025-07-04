@@ -11,9 +11,9 @@ const MINI_CUBES = [
   { speed: 16, inclination: 150, name: 'Express' },
 ];
 
-const ORBIT_RADIUS_X = 420;
-const ORBIT_RADIUS_Y = 160;
-const ORBIT_RADIUS_Z = 50;
+const ORBIT_RADIUS_X = 420 * 0.7;
+const ORBIT_RADIUS_Y = 160 * 0.7;
+const ORBIT_RADIUS_Z = 50 * 0.7;
 
 const degToRad = (deg: number) => deg * (Math.PI / 180);
 

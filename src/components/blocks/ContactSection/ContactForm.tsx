@@ -36,7 +36,7 @@ const ContactForm: React.FC = () => {
 
   return(
     <div 
-      className="w-[30vw] h-[60vh] bg-[#03b98b] rounded-[12px] p-[60px]
+      className="w-[30vw] h-[60vh] bg-gray-800 rounded-[12px] p-[60px]
       shadow-[0_4px_12px_rgba(255,255,255,0.06)]"
     >
       <Form {...form}>
@@ -46,9 +46,8 @@ const ContactForm: React.FC = () => {
             name="name"
             render={({ field }) => (
               <FormItem>
-                <FormLabel className="text-black font-bold">Name</FormLabel>
                 <FormControl>
-                  <Input placeholder="Your Name" {...field} className="border-3 border-black font-bold !placeholder-white p-4" />
+                  <Input placeholder="Your Name" {...field} className="bg-gray-600 border-none font-bold !placeholder-white p-4" />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -60,9 +59,8 @@ const ContactForm: React.FC = () => {
             name="email"
             render={({ field }) => (
               <FormItem>
-                <FormLabel className="text-black font-bold">Email</FormLabel>
                 <FormControl>
-                  <Input placeholder="Your Email" {...field} className="border-3 border-black font-bold !placeholder-white p-4"/>
+                  <Input placeholder="Your Email" {...field} className="bg-gray-600 border-none font-bold !placeholder-white p-4"/>
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -74,12 +72,11 @@ const ContactForm: React.FC = () => {
             name="message"
             render={({ field }) => (
               <FormItem>
-                <FormLabel className="text-black font-bold">Message</FormLabel>
                 <FormControl>
                   <Textarea
                     placeholder="Your message"
                     {...field}
-                    className="w-full min-h-[200px] text-black font-bold !placeholder-white p-4 resize-none border-3 border-black"
+                    className="w-full min-h-[200px] text-white font-bold !placeholder-white p-4 resize-none bg-gray-600 border-none"
                   />
                 </FormControl>
                 <FormMessage />
@@ -90,11 +87,11 @@ const ContactForm: React.FC = () => {
           <Button
             type="submit"
             variant="ghost"
-            className="w-full text-black font-bold border-3 border-black p-6 text-[22px] font-bold
+            className="w-full text-white font-bold border-none p-6 text-[22px] font-bold
             transition-transform duration-1000 ease-[cubic-bezier(0.25,0.8,0.25,1)]
-            hover:transform hover:-translate-y-[5px] hover:scale-[1.02]
+            hover:transform hover:-translate-y-[5px] hover:scale-[1.02] mt-[80px]
             hover:shadow-[0_10px_30px_rgba(0,240,255,0.45),0_0_60px_rgba(255,255,255,0.08)]
-            backdrop-blur-md"
+            backdrop-blur-md cursor-pointer"
           >
             Send Message
           </Button>
