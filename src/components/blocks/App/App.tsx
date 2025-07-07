@@ -40,7 +40,7 @@ const App: React.FC = () => {
         <Header setMeteor={setIsMeteor} />
         <Headline />
       </div>
-      <div className="p-[80px]">
+      <div className="pt-10 pr-20 pb-10 pl-20">
         <StatsBlock />
         <div className="flex flex-col items-center justify-center">
           <FeaturedProjects />

@@ -20,7 +20,7 @@ const AttributeCard: React.FC<AttributeCardProps> = ({ attribute }) => {
           {attribute.title}
         </div>
         <div className="flex flex-col items-center justify-start gap-4 mt-4">
-          <img src={attribute.img} alt={attribute.alt} className="w-[25px] h-[25px]" />
+          <img src={attribute.img} alt={attribute.alt} className="w-[45px]" />
           <div className="text-white text-[24px] text-center min-h-[60px]">
             {attribute.description}
           </div>

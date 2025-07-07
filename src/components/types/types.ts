@@ -39,7 +39,8 @@ export interface Job {
     date: string,
     acchievements: string[],
     techstack: string[],
-    active: boolean
+    active: boolean,
+    img: string,
 };
 
 export type Jobs = Job[]; 

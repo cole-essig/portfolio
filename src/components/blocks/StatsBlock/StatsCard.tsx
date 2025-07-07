@@ -21,7 +21,7 @@ const StatsCard: React.FC<StatsCardProps> = ({ stat }) => {
         <h2>{stat.title}</h2>
       </div>
       <div className="flex flex-col items-center gap-2 mt-2">
-        <img src={stat.img} alt={stat.alt} className="w-[25px] h-[25px]" />
+        <img src={stat.img} alt={stat.alt} className="w-[45px] mb-2" />
         <div className="text-white text-[20px]">{stat.description}</div>
       </div>
     </div>

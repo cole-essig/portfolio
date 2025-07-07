@@ -3,11 +3,11 @@ import type { Projects } from "@/components/types/types";
 import { FeatProj } from "@/utils/projects";
 import type { Bullet } from "@/components/types/types";
 import ProjectBlock from "./ProjectBlock";
-import CodeIcon from "@/assets/code.svg";
+import ToolIcon from "@/assets/Icons/005-tools.svg";
 
 const FeaturedProjects: React.FC = () => {
   const bullet: Bullet = {
-    img: CodeIcon,
+    img: ToolIcon,
     alt: "icon",
     title: "Built with cutting edge frameworks and tools"
   }

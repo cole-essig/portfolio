@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import RotatingWords from "./RotatingWords";
 import SectionHeader from "../SectionHeader/SectionHeader";
 import type { Bullet } from "@/components/types/types";
-import CodeIcon from "@/assets/code.svg";
+import CloudIcon from "@/assets/Icons/033-cloud-computing.svg";
 
 const HeadlineContent: React.FC = () => {
     const ViewWork = (e: React.MouseEvent<HTMLButtonElement>) => {
@@ -11,7 +11,7 @@ const HeadlineContent: React.FC = () => {
     }
 
     const bullet: Bullet = {
-        img: CodeIcon,
+        img: CloudIcon,
         alt: "icon",
         title: "Full-Stack Developer", 
     }

@@ -1,8 +1,12 @@
 import type { Job, Bullet } from "@/components/types/types";
 import { Badge } from "@/components/ui/badge";
 import SectionHeader from "../SectionHeader/SectionHeader";
-import CodeIcon from "@/assets/code.svg";
 import ActiveCard from "./ActiveCard";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/all";
+import { useRef, useEffect } from "react";
+
+gsap.registerPlugin(ScrollTrigger);
 
 
 interface JobBlockProps {
@@ -10,13 +14,34 @@ interface JobBlockProps {
 }
 
 const JobBlock: React.FC<JobBlockProps> = ({ job }) => {
+    const jobBlockRef = useRef<HTMLDivElement>(null);
+
     const bullet: Bullet = {
-        img: CodeIcon,
+        img: job.img,
         alt: job.date,
         title: job.date,
     };
 
     const isActive = job.active ? "Active" : "Past";
+
+    useEffect(() => {
+        gsap.fromTo(
+            jobBlockRef.current,
+            { opacity: 0, y: 50 },
+            {
+                opacity: 1,
+                y: 0,
+                duration: 1,
+                ease: "power2.out",
+                scrollTrigger: {
+                    trigger: jobBlockRef.current,
+                    start: "top 50%",
+                    toggleActions: "play none none reverse",
+                },
+            }
+        );
+    }, []);
+
     return (
        <div 
           className="flex flex-col justify-center items-start 
@@ -27,6 +52,7 @@ const JobBlock: React.FC<JobBlockProps> = ({ job }) => {
           hover:transform hover:-translate-y-[15px] hover:scale-[1.02]
           hover:shadow-[0_10px_30px_rgba(0,240,255,0.45),0_0_60px_rgba(255,255,255,0.08)]
           backdrop-blur-md"
+          ref={jobBlockRef}
         >
           <SectionHeader bullet={bullet} />
           <h2 className="text-white text-[24px] mt-[20px] mb-[10px]">{job.position}-{job.company}</h2>

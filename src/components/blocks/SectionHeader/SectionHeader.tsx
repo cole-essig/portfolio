@@ -12,9 +12,9 @@ const SectionHeader: React.FC<SectionHeaderProps> = ({ bullet }) => {
       <img
         src={bullet.img}
         alt={bullet.alt}
-        className="w-[30px] h-[30px] mt-[5px] mr-[10px]"
+        className="w-[35px] mt-[5px] mr-[10px]"
       />
-      <p className="text-white text-[24px] font-bold">{bullet.title}</p>
+      <p className="text-white text-[30px] font-bold">{bullet.title}</p>
     </div>
   );
 };

@@ -2,11 +2,11 @@ import ContactForm from "./ContactForm";
 import SectionHeader from "../SectionHeader/SectionHeader"; 
 import ContactAnimation from "./ContactAnimation";
 import type { Bullet } from "@/components/types/types"; 
-import CodeIcon from "@/assets/code.svg";
+import ContactIcon from "@/assets/Icons/016-chat.svg";
 
 const ContactSection: React.FC = () => {
     const bullet: Bullet = {
-        img: CodeIcon,
+        img: ContactIcon,
         alt: "phone icon",
         title: "Have a question? Let's talk!",
     };

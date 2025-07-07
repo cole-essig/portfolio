@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from "react";
+import React, { useRef, useState } from "react";
 import type { Skill } from "@/components/types/types";
 import { gsap } from "gsap/gsap-core";
 import SkillsChartAnima from "./SkillsChartAnima";
