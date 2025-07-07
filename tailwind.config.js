@@ -5,8 +5,24 @@ module.exports = {
     "./src/**/*.{js,ts,jsx,tsx}"  // ✔️ all files in /src
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        montserrat: ['Montserrat', 'sans-serif'],
+        sans: ['Montserrat', 'ui-sans-serif', 'system-ui'],
+      },
+      transformStyle: {
+        'preserve-3d': 'preserve-3d',
+      },
+    },
   },
-  plugins: [],
-}
+  plugins: [
+    function ({ addUtilities }) {
+      addUtilities({
+        '.transform-style-preserve-3d': {
+          transformStyle: 'preserve-3d',
+        },
+      });
+    }
+  ]
+};
 

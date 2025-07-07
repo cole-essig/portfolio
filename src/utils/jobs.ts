@@ -1,4 +1,7 @@
 import type { Job, Jobs } from "@/components/types/types";
+import LandscapeIcon from "@/assets/Icons/005-tools.svg";
+import FreeLanceIcon from "@/assets/Icons/003-usb.svg";
+import OFCAIcon from "@/assets/Icons/037-satellite-dish.svg";
 
 export const SchoonLandscape: Job = {
     company: "Schoon Landscape",
@@ -11,7 +14,9 @@ export const SchoonLandscape: Job = {
         "Blended craftsmanship in welding, carpentry, and landscaping with modern technologies to create integrated physical environments"
     ],
     techstack: ["Business Management", "Customer Service", "Project Management"],
-    active: true
+    active: true,
+    img: LandscapeIcon
+
 };
 
 export const FreeLanceWebDev: Job = {
@@ -25,7 +30,8 @@ export const FreeLanceWebDev: Job = {
         "Delivered projects on time and within budget, ensuring high client satisfaction for over 10 projects",
     ],
     techstack: ["React", "Node.js", "Express", "MongoDB", "JavaScript", "TypeScript", "WordPress"],
-    active: true
+    active: true,
+    img: FreeLanceIcon
 };
 
 export const OFCA: Job = {
@@ -38,7 +44,8 @@ export const OFCA: Job = {
         "Ensured website compliance with accessibility standards, and handled several backend tasks including database management and server configuration"
     ],
     techstack: ["TypeScript", "Apollo", "GraphQL", "React", "Antd", "keystoneJS"],
-    active: true
+    active: true,
+    img: OFCAIcon
 };
 
 export const JobList: Jobs = [

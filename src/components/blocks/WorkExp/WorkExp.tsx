@@ -2,9 +2,10 @@ import JobBlock from "./JobBlock";
 import SectionHeader from "../SectionHeader/SectionHeader";
 import type { Jobs, Bullet } from "@/components/types/types";
 import { SchoonLandscape, FreeLanceWebDev, OFCA } from "@/utils/jobs";
-
+import CareerIcon from "@/assets/Icons/010-rocket-ship.svg";
 
 const WorkExp: React.FC = () => {
+
   const jobs: Jobs = [
     SchoonLandscape,
     FreeLanceWebDev,
@@ -12,15 +13,15 @@ const WorkExp: React.FC = () => {
   ];
 
   const bullet: Bullet = {
-    img: "/assets/code.svg",
+    img: CareerIcon,
     alt: "Career Header",
     title: "Career Overview"
   };  
+
     return (
-        <div className="flex flex-col w-full max-w-[1200px] mx-auto mt-[100px] gap-[20px]">
-          <div className="flex flex-col items-center justify-center">
+        <div className="flex flex-col w-full max-w-[1200px] mx-auto mt-[100px] gap-[50px]">
+          <div className="flex flex-col items-center justify-center mb-[50px]">
             <SectionHeader bullet={bullet}/>
-            <h2 className="text-white font-bold text-[32px]">Professional Work Experience</h2>
           </div>
           {jobs.map((job, index) => (
             <JobBlock key={index} job={job} /> 
