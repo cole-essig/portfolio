@@ -88,7 +88,7 @@ const SkillsCard: React.FC<SkillsCardProps> = ({ skill }) => {
           { !isModal ? 
             <div className="flex flex-col items-center justify-center">
               <h3 className="text-white font-bold">{skill.skill}</h3>
-              <img src={skill.img} alt={skill.alt} className="w-[64px]" />
+              <img src={skill.img} alt={skill.alt} className="w-[64px] mt-4" />
             </div>
             : 
             <div>
