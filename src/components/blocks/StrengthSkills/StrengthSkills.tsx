@@ -37,7 +37,7 @@ const StrengthSkills: React.FC = () => {
         );
     }, []);
   return(
-    <div className="flex flex-col min-h-[400px] items-center justify-center mt-[80px] bg-[#040917] rounded-[12px] p-20" ref={skillsBlockRef}>
+    <div className="flex flex-col min-h-[400px] items-center justify-center mt-[80px] bg-[#040917] rounded-[12px] p-20" ref={skillsBlockRef} id="skills">
         <SectionHeader bullet={bullet} />
         <div className="flex flex-row flex-wrap w-[1040px] gap-[40px] justify-center items-center mt-[80px]">
             {skillsList.map((skill, index) => (

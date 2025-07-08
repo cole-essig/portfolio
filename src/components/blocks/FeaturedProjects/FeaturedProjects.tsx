@@ -14,7 +14,7 @@ const FeaturedProjects: React.FC = () => {
 // Needs API call here, will hard code for now
   const projects: Projects = FeatProj 
     return (
-        <div className="p-[80px]">
+        <div className="p-[80px]" id="projects">
             <div className="flex flex-col items-center justify-center mt-[80px] mb-[80px]">
               <SectionHeader bullet={bullet} />
               <h2 className="text-white font-bold text-[32px] mt-[20px]">Featured Projects</h2>

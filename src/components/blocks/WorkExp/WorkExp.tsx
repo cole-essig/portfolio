@@ -19,7 +19,7 @@ const WorkExp: React.FC = () => {
   };  
 
     return (
-        <div className="flex flex-col w-full max-w-[1200px] mx-auto mt-[100px] gap-[50px]">
+        <div className="flex flex-col w-full max-w-[1200px] mx-auto mt-[100px] gap-[50px]" id="experience">
           <div className="flex flex-col items-center justify-center mb-[50px]">
             <SectionHeader bullet={bullet}/>
           </div>

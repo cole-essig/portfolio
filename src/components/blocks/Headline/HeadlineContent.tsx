@@ -3,6 +3,10 @@ import RotatingWords from "./RotatingWords";
 import SectionHeader from "../SectionHeader/SectionHeader";
 import type { Bullet } from "@/components/types/types";
 import CloudIcon from "@/assets/Icons/033-cloud-computing.svg";
+import gsap from "gsap";
+import { ScrollToPlugin } from "gsap/all";
+
+gsap.registerPlugin(ScrollToPlugin);
 
 const HeadlineContent: React.FC = () => {
     const ViewWork = (e: React.MouseEvent<HTMLButtonElement>) => {
@@ -14,6 +18,17 @@ const HeadlineContent: React.FC = () => {
         img: CloudIcon,
         alt: "icon",
         title: "Full-Stack Developer", 
+    }
+    
+    const scrollToSection = (sectionId: string) => {
+        gsap.to(window, {  
+            duration: 1,
+            scrollTo: {
+                y: `#${sectionId}`,
+                offsetY: 100 // Adjust this value to change the offset
+            },
+            ease: "power2.inOut"
+        });
     }
 
     return (
@@ -40,6 +55,7 @@ const HeadlineContent: React.FC = () => {
                 hover:transform hover:-translate-y-[15px] hover:scale-[1.02]
                 hover:shadow-[0_10px_30px_rgba(0,240,255,0.45),0_0_60px_rgba(255,255,255,0.08)]
                 backdrop-blur-md cursor-pointer"
+                onClickCapture={() => scrollToSection("projects")}
             >
                 View My Work
             </Button>
