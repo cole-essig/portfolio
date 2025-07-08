@@ -84,8 +84,13 @@ const SkillsCard: React.FC<SkillsCardProps> = ({ skill }) => {
         ref={boxRef}
         onClick={onClick}
       >
-        <div className={!isModal ? "text-white font-bold text-[24px] min-h-[48px]" : "p-4"}>
-          { !isModal ? skill.skill : 
+        <div className={!isModal ? "text-white font-bold text-sm min-h-[48px]" : "p-4"}>
+          { !isModal ? 
+            <div className="flex flex-col items-center justify-center">
+              <h3 className="text-white font-bold">{skill.skill}</h3>
+              <img src={skill.img} alt={skill.alt} className="w-[64px]" />
+            </div>
+            : 
             <div>
               <h3 className="text-white font-bold text-[48px]">{skill.skill}</h3>
               <p className="text-white font-bold text-[20px]" style={{ margin: '60px 0 70px 0' }}>{skill.description}</p>
