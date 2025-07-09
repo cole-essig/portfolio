@@ -13,13 +13,13 @@ My Portfolio is a web-based site showcasing my full-stack development projects, 
 
 - **Frontend**: React.js (with Vite)
 - **Language**: TypeScript
-- **Styling**: TailwindCSS and [shadcn/ui](https://ui.shadcn.com/) -> check out their library.
+- **Styling**: TailwindCSS - [shadcn/ui](https://ui.shadcn.com/) -> check out their library - GSAP animation plugin -> use them, its worth it.
+- **Extras**: EmailJS - Zod - Google Fonts
 
 ## Getting Started
 
 ### Prerequisites
 
-- Install [Node.js](https://nodejs.org/)
 - Make sure `npm` is installed
 
 ### Installation
