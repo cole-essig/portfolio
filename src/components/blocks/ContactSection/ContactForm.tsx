@@ -11,12 +11,18 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import emailjs from "@emailjs/browser";
+
 
 const ContactFormSchema = z.object({
   name: z.string().min(1, "Name is required"),
   email: z.string().email("Invalid email address").min(1, "Email is required"),
   message: z.string().min(1, "Message is required"),
 });
+
+const EMAILJS_USER_ID = import.meta.env.VITE_EMAILJS_USER_ID;
+const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
 
 const ContactForm: React.FC = () => {
   const form = useForm<z.infer<typeof ContactFormSchema>>({
@@ -28,8 +34,25 @@ const ContactForm: React.FC = () => {
     },
   });
 
-  const onSubmit = (data: z.infer<typeof ContactFormSchema>) => {
-    console.log("Form submitted:", data);
+  const onSubmit = async (data: z.infer<typeof ContactFormSchema>) => {
+    try {
+    const result = await emailjs.send(
+      EMAILJS_SERVICE_ID,
+      EMAILJS_TEMPLATE_ID,
+      {
+        name: data.name,
+        email: data.email,
+        time: new Date().toLocaleString(),
+        message: data.message,
+      },
+      EMAILJS_USER_ID
+    );
+    console.log("Email sent successfully:", result.text);
+  } catch (error: any) {
+    console.error("Error sending email:", error.text);
+  }
+    form.reset();
+    alert("Message sent successfully!");
   };
 
   return (
