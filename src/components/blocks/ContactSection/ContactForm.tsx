@@ -12,12 +12,14 @@ import {
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import emailjs from "@emailjs/browser";
+import { useState } from "react";
 
 
 const ContactFormSchema = z.object({
   name: z.string().min(1, "Name is required"),
   email: z.string().email("Invalid email address").min(1, "Email is required"),
   message: z.string().min(1, "Message is required"),
+  phone: z.string().optional(), // Honey pot field, should be left empty
 });
 
 const EMAILJS_USER_ID = import.meta.env.VITE_EMAILJS_USER_ID;
@@ -25,34 +27,47 @@ const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
 const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
 
 const ContactForm: React.FC = () => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
   const form = useForm<z.infer<typeof ContactFormSchema>>({
     resolver: zodResolver(ContactFormSchema),
     defaultValues: {
       name: "",
       email: "",
       message: "",
+      phone: "", // Honey pot field
     },
   });
 
   const onSubmit = async (data: z.infer<typeof ContactFormSchema>) => {
-    try {
-    const result = await emailjs.send(
-      EMAILJS_SERVICE_ID,
-      EMAILJS_TEMPLATE_ID,
-      {
-        name: data.name,
-        email: data.email,
-        time: new Date().toLocaleString(),
-        message: data.message,
-      },
-      EMAILJS_USER_ID
-    );
-    console.log("Email sent successfully:", result.text);
-  } catch (error: any) {
-    console.error("Error sending email:", error.text);
-  }
-    form.reset();
-    alert("Message sent successfully!");
+    // Honey pot check
+    // If the phone field is filled, it's likely a bot submission
+    if (data.phone) {
+      return;
+    }
+    if (isSubmitting) return; // Prevent multiple submissions
+    setIsSubmitting(true);
+      try {
+      const result = await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        {
+          name: data.name,
+          email: data.email,
+          time: new Date().toLocaleString(),
+          message: data.message,
+        },
+        EMAILJS_USER_ID
+      );
+      console.log("Email sent successfully:", result.text);
+    } catch (error: any) {
+      console.error("Error sending email:", error.text);
+    }
+      form.reset();
+      alert("Message sent successfully!");
+      setTimeout(() => {
+        setIsSubmitting(false);
+      }, 60000);
   };
 
   return (
@@ -65,6 +80,14 @@ const ContactForm: React.FC = () => {
           onSubmit={form.handleSubmit(onSubmit)}
           className="flex flex-col h-full gap-4"
         >
+           <input
+              type="text"
+              name="phone"               
+              autoComplete="off"
+              tabIndex={-1}
+              style={{ display: "none" }}
+              aria-hidden="true"
+           />
           <FormField
             control={form.control}
             name="name"
@@ -126,8 +149,9 @@ const ContactForm: React.FC = () => {
               hover:transform hover:-translate-y-[5px] hover:scale-[1.02]
               hover:shadow-[0_10px_30px_rgba(0,240,255,0.45),0_0_60px_rgba(255,255,255,0.08)]
               backdrop-blur-md cursor-pointer mt-auto"
+              disabled={isSubmitting}
           >
-            Send Message
+            {isSubmitting ? "Sending..." : "Send Message"}
           </Button>
         </form>
       </Form>
